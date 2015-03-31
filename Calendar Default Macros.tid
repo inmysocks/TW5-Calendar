@@ -1,0 +1,40 @@
+created: 20150212024632244
+modified: 20150212042506838
+tags: $:/tags/Macro
+title: $:/plugins/inmysocks/Calendar/Calendar Default Macros
+
+\define CalendarListDailyThingsOld(day)
+<$button class='tc-btn-invisible' style='width:100%;height:100%'>
+<$set name=Day value=$day$>
+<$set name=Month value={{!!month}}>
+<$set name=Year value={{!!year}}>
+<$set name=DateString value=<<CalendarMakeDateString>>>
+<$action-navigate $to=<<CalendarMakeDateString>>/>
+<div style='height:100%;width:100%;position:relative;text-align:left;vertical-align:top;z-index=0'>
+''$day$''<br>
+<$list filter='[has<DateString>]-[[$:/temp/MakeCalendarEntry]]'>
+<$view field='title'/><br>
+</$list>
+</div>
+</$set>
+</$set>
+</$set>
+</$set>
+</$button>
+\end
+
+\define CalendarMakeDateString()
+$(Day)$-$(Month)$-$(Year)$
+\end
+
+\define CalendarListDailyThings(day month year)
+<$button class='tc-btn-invisible' style='width:100%;height:100%'>
+<$action-navigate $to="""$day$-$month$-$year$"""/>
+<div style='height:100%;width:100%;position:relative;text-align:left;vertical-align:top;z-index=0'>
+''$day$''<br>
+<$list filter='[day[$day$]month[$month$]year[$year$]]-[[$:/temp/MakeCalendarEntry]]'>
+<$view field='title'/><br>
+</$list>
+</div>
+</$button>
+\end

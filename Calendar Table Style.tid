@@ -1,0 +1,25 @@
+created: 20150212024632244
+modified: 20150212042506838
+tags: $:/tags/Stylesheet
+title: $:/plugins/inmysocks/Calendar/Calendar Table Style
+type: text/css
+
+.calendar-table {
+	border: 0px;
+    overflow: hidden;
+    vertical-align: top;
+    width: 100%;
+}
+
+.calendar-table table {
+	width:100%;
+}
+
+.calendar-table td, th {
+    width: 14%;
+    vertical-align: top;
+}
+
+.calendar-table td {
+        height: 100px;
+}
