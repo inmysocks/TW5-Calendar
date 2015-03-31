@@ -3,7 +3,7 @@ modified: 20150212042506838
 tags: $:/tags/Macro
 title: $:/plugins/inmysocks/Calendar/Calendar Default Macros
 
-\define CalendarListDailyThingsOld(day month year)
+\define CalendarListDailyThingsFullDateString(day month year)
 <$button class='tc-btn-invisible' style='width:100%;height:100%'>
 <$action-navigate $to="$(day)$-$(month)$-$(year)$"/>
 <div style='height:100%;width:100%;position:relative;text-align:left;vertical-align:top;z-index=0'>
