@@ -23,11 +23,9 @@ Content of the `<$calendar-month>` widget is ignored.
 |day_macro |(optional) The macro that defines the content of each calendar day. It is passed the parameter `day` with the value of the current day of the month. Defaluts to `CalendarListDailyThings` defined in [[Calendar Default Macros|$:/plugins/inmysocks/Calendar/Calendar Default Macros]] |
 |class |(optional) A css class to use. Defaults to the class `calendar-table` defined in [[Calendar Table Style|$:/plugins/inmysocks/Calendar/Calendar Table Style]] |
 
-!The ~CalendarListDailyThings macro
+!The default ~CalendarListDailyThings macro
 
-This macro requires that the tiddler the calendar month widget is in has a field called `year` that contains the current year and a field called `month` that lists the current month. While these don't necessarily have to be numeric, they do need to be valid field names (no capital letters, no spaces, etc.).
-
-This macro lists any tiddler that has a field named (day)-(month)-(year) with the appropriate day, month and year for that date in the calendar. Each calendar day is a button that when clicked will open the tiddler named (day)-(month)-(year) matching that day.
+This macro lists any tiddlers that have fields called `day`, `month` and `year` in the matching calendar day. If you click on a cell than a tiddler with a title in the form of (day)-(month)-(year) is opened.
 
 !Month values
 
