@@ -1,6 +1,6 @@
 # TW5-Calendar
 
-To see this plugin in use you can see it on my page [[here|http://ooktech.com/jed/externalbrain/#Blog%20Archives]]
+To see this plugin in use you can see it on my page [[here|http://ooktech.com/jed/externalbrain/#Calendar%20Archives]]
 
 This plugin has:
 
