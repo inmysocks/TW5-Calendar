@@ -1,0 +1,108 @@
+title: $:/plugins/inmysocks/Calendar/DefineDateType
+tags: $:/tags/plugins/inmysocks/Calendar/Settings
+caption: Define or Edit Date Types
+
+\define thisCreateButton()
+<$reveal type='nomatch' state='$:/temp/plugins/inmysocks/Calendar/Create Custom Date!!custom_name' text=''>
+	<$button>
+		Create
+		<$action-setfield $tiddler='$:/data/plugins/inmysocks/Calendar/Special Date Types' $index={{$:/temp/plugins/inmysocks/Calendar/Create Custom Date!!custom_name}} $value='true'/>
+		<$action-setfield $tiddler='$:/data/plugins/inmysocks/Calendar/Special Date Types/$(DateType)$' css_class='special_date_types_$(DateType)$_css'/>
+	</$button>
+</$reveal>
+\end
+
+\define thisEditOptions()
+<$reveal type='nomatch' state='$:/state/plugins/inmysocks/Calendar/DefineDateType!!selected_theme' text=''>
+Text size
+<br>
+<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/Special Date Types/$(SelectedDateType)$' field='font-size'/>
+<br>
+
+Text color
+<br>
+<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/Special Date Types/$(SelectedDateType)$' field='color'/>
+<br>
+
+Font family
+<br>
+<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/Special Date Types/$(SelectedDateType)$' field='font-family'/>
+<br>
+
+Background color
+<br>
+<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/Special Date Types/$(SelectedDateType)$' field='background-color'/>
+<br>
+
+Border color
+<br>
+<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/Special Date Types/$(SelectedDateType)$' field='border-color'/>
+<br>
+
+Border style
+<br>
+<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/Special Date Types/$(SelectedDateType)$' field='border-style'/>
+<br>
+
+Border width
+<br>
+<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/Special Date Types/$(SelectedDateType)$' field='border-width'/>
+<br>
+</$reveal>
+\end
+
+\define thisSetUpDate()
+Identify dates by:
+<$select tiddler='$:/data/plugins/inmysocks/Calendar/Special Date Types/$(SelectedDateType)$' field='tag_or_field'>
+	<option>
+		Tag
+	</option>
+	<option>
+		Field
+	</option>
+</$select>
+
+<$reveal type=match state='$:/data/plugins/inmysocks/Calendar/Special Date Types/$(SelectedDateType)$!!tag_or_field' text='Tag'>
+Tag:
+<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/Special Date Types/$(SelectedDateType)$' field='identifier_tag' class='tc-edit-texteditor'/>
+</$reveal>
+<$reveal type=match state='$:/data/plugins/inmysocks/Calendar/Special Date Types/$(SelectedDateType)$!!tag_or_field' text='Single Field'>
+Field Name:
+<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/Special Date Types/$(SelectedDateType)$' field='identifier_field_name' class='tc-edit-texteditor'/>
+Field contents:
+<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/Special Date Types/$(SelectedDateType)$' field='identifier_field_contents' class='tc-edit-texteditor'/>
+</$reveal>
+\end
+
+Create new date type: <$edit-text tiddler='$:/temp/plugins/inmysocks/Calendar/Create Custom Date' field='custom_name' placeholder='New Theme Name'/> <$vars DateType={{$:/temp/plugins/inmysocks/Calendar/Create Custom Date!!custom_name}}><<thisCreateButton>></$vars>
+
+or
+
+Select date type to edit:
+<$select tiddler='$:/state/plugins/inmysocks/Calendar/DefineDateType' field='selected_theme'>
+	<option value=''>--</option>
+	<$list filter='[[$:/data/plugins/inmysocks/Calendar/Special Date Types]indexes[]]'>
+		<option>
+			<<currentTiddler>>
+		</option>
+	</$list>
+</$select>
+
+<$reveal type='nomatch' state='$:/state/plugins/inmysocks/Calendar/DefineDateType!!selected_theme' text=''>
+	Select a date type to edit it.
+</$reveal>
+<$reveal type='nomatch' state='$:/state/plugins/inmysocks/Calendar/DefineDateType!!selected_theme' text=''>
+	Editing: {{$:/state/plugins/inmysocks/Calendar/DefineDateType!!selected_theme}}
+
+	<$vars SelectedDateType={{$:/state/plugins/inmysocks/Calendar/DefineDateType!!selected_theme}}>
+		<<thisSetUpDate>>
+
+		Configure date type:
+
+		<<thisEditOptions>>
+	</$vars>
+</$reveal>
+
+This section is used to define the appearance of special dates. Special dates can either be determined by tiddlers with a specified tag and the appropriate date fields, or can be listed here.
+
+The type of special day (birthday, work, etc.) can be specified by either a user defined tag, or by the contents of a user defined field. So birthdays could have tiddlers tagged with 'Birthday' or there could be a field called 'birthday' with the contents 'true' or something similar to that.

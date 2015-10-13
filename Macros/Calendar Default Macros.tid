@@ -1,0 +1,63 @@
+tags: $:/tags/Macro
+title: $:/plugins/inmysocks/Calendar/Calendar Default Macros
+
+\define CalendarListDailyThingsFullDateString(day month year)
+<$button class='tc-btn-invisible' style='width:100%;height:100%'>
+<$action-navigate $to="$(day)$-$(month)$-$(year)$"/>
+<div style='height:100%;width:100%;position:relative;text-align:left;vertical-align:top;z-index=0'>
+''$day$''<br>
+<$list filter='[has[$day$-$month$-$year$]]-[[$:/temp/MakeCalendarEntry]]'>
+<$view field='title'/><br>
+</$list>
+</div>
+</$button>
+\end
+
+\define CalendarListDailyThingsTags(day month year)
+<$button class='tc-btn-invisible' style='width:100%;height:100%'>
+<$action-navigate $to="""$day$-$month$-$year$"""/>
+<div style='height:100%;width:100%;position:relative;text-align:left;vertical-align:top;z-index=0'>
+''$day$''<br>
+<$list filter='[tag[$day$-$month$-$year$]]-[[$:/temp/MakeCalendarEntry]]'>
+<$view field='title'/><br>
+</$list>
+</div>
+</$button>
+\end
+
+\define CalendarListDailyThings(day month year)
+<$button class='tc-btn-invisible' style='width:100%;height:100%'>
+<$action-navigate $to="""$day$-$month$-$year$"""/>
+<div style='height:100%;width:100%;position:relative;text-align:left;vertical-align:top;z-index=0'>
+''$day$''<br>
+<$list filter='[day[$day$]month[$month$]year[$year$]]-[[$:/temp/MakeCalendarEntry]]'>
+<$view field='title'/><br>
+</$list>
+</div>
+</$button>
+\end
+
+\define CalendarColorWeekends(day month year dayOfTheWeek)
+<$list filter='[[$dayOfTheWeek$]prefix[5]][[$dayOfTheWeek$]prefix[6]]'>
+<$button class='tc-btn-invisible' style='width:100%;height:100%;background-color:pink'>
+<$action-navigate $to="""$day$-$month$-$year$"""/>
+<div style='height:100%;width:100%;position:relative;text-align:left;vertical-align:top;z-index=0;'>
+''$day$''<br>
+<$list filter='[day[$day$]month[$month$]year[$year$]]-[[$:/temp/MakeCalendarEntry]]'>
+<$view field='title'/><br>
+</$list>
+</div>
+</$button>
+</$list>
+<$list filter='[[$dayOfTheWeek$]!prefix[5]]+[!prefix[6]]'>
+<$button class='tc-btn-invisible' style='width:100%;height:100%;border:0px;border-left:0px;border-top:0px;padding:0px 0px 0px 0px;'>
+<$action-navigate $to="""$day$-$month$-$year$"""/>
+<div style='height:100%;width:100%;position:relative;text-align:left;vertical-align:top;z-index=0'>
+''$day$''<br>
+<$list filter='[day[$day$]month[$month$]year[$year$]]-[[$:/temp/MakeCalendarEntry]]'>
+<$view field='title'/><br>
+</$list>
+</div>
+</$button>
+</$list>
+\end

@@ -1,0 +1,129 @@
+title: $:/plugins/inmysocks/Calendar/DefineClickingBehavior
+tags: $:/tags/plugins/inmysocks/Calendar/Settings
+caption: Define Click Behavior
+
+!This doesn't do anything yet!!
+
+This should hold the various options for what to do when clicking on a date.
+
+Behaviour when clicking on a day
+
+<$select tiddler='$:/temp/plugins/inmysocks/Calendar/calendarconfiguration' field='clicking_behavior'>
+	<option>
+		Open Tiddler
+	</option>
+	<option>
+		Open Tiddler as a Popup
+	</option>
+	<option>
+		Open Tiddler as a Modal
+	</option>
+	<option>
+		Nothing
+	</option>
+</$select>
+
+<$reveal type=match state='$:/temp/plugins/inmysocks/Calendar/calendarconfiguration!!clicking_behavior' text='Open Tiddler as a Popup'>
+	<$checkbox tiddler='$:/temp/plugins/inmysocks/Calendar/calendarconfiguration' field='use_popup' checked=true unchecked=false>
+		Display Popup on Hover
+	</$checkbox>
+</$reveal>
+
+Open which tiddler(s)?
+
+<$select tiddler='$:/temp/plugins/inmysocks/Calendar/calendarconfiguration' field='select_tiddlers_how'>
+	<option>
+		By Tag
+	</option>
+	<option>
+		By Fields
+	</option>
+	<option>
+		Always the Same Tiddler
+	</option>
+</$select>
+
+<$reveal type='match' state='$:/temp/plugins/inmysocks/Calendar/calendarconfiguration!!select_tiddlers_how' text='By Tag'>
+
+	Select the tag format:
+
+	<$select tiddler='$:/temp/plugins/inmysocks/Calendar/calendarconfiguration' field='tag_format'>
+		<option>
+			dd-mm-yyyy
+		</option>
+		<option>
+			dd-mm-yy
+		</option>
+		<option>
+			mm-dd-yyyy
+		</option>
+		<option>
+			mm-dd-yy
+		</option>
+	</$select>
+
+	or,
+
+	Enter custom format:
+
+	I need to do this later
+</$reveal>
+
+<$reveal type='match' state='$:/temp/plugins/inmysocks/Calendar/calendarconfiguration!!select_tiddlers_how' text='By Fields'>
+	<$select tiddler='$:/temp/plugins/inmysocks/Calendar/calendarconfiguration' field='single_or_multiple_fields'>
+		<option>
+			Single field
+		</option>
+		<option>
+			Multiple Fields
+		</option>
+	</$select>
+
+	<$reveal type='match' state='$:/temp/plugins/inmysocks/Calendar/calendarconfiguration!!single_or_multiple_fields' text='Single field'>
+
+		Field Name:
+
+		<$edit-text tiddler='$:/temp/plugins/inmysocks/Calendar/calendarconfiguration' field='single_field_name' class='tc-edit-texteditor'/>
+
+		Field Format:
+
+		<$select tiddler='$:/temp/plugins/inmysocks/Calendar/calendarconfiguration' field='single_field_format'>
+			<option>
+				dd-mm-yyyy
+			</option>
+			<option>
+				dd-mm-yy
+			</option>
+			<option>
+				mm-dd-yyyy
+			</option>
+			<option>
+				mm-dd-yy
+			</option>
+		</$select>
+	</$reveal>
+
+	<$reveal type='match' state='$:/temp/plugins/inmysocks/Calendar/calendarconfiguration!!single_or_multiple_fields' text='Multiple Fields'>
+
+		Day Field:
+		<$edit-text tiddler='$:/temp/plugins/inmysocks/Calendar/calendarconfiguration' field='day_field_name' class='tc-edit-texteditor'/>
+
+		Month Field:
+		<$edit-text tiddler='$:/temp/plugins/inmysocks/Calendar/calendarconfiguration' field='month_field_name' class='tc-edit-texteditor'/>
+
+		Year Field:
+		<$edit-text tiddler='$:/temp/plugins/inmysocks/Calendar/calendarconfiguration' field='year_field_name' class='tc-edit-texteditor'/>
+
+	</$reveal>
+
+</$reveal>
+
+<$reveal type='match' state='$:/temp/plugins/inmysocks/Calendar/calendarconfiguration!!select_tiddlers_how' text='Always the Same Tiddler'>
+
+	Which Tiddler:
+
+	<$edit-text tiddler='$:/temp/plugins/inmysocks/Calendar/calendarconfiguration' field='open_same_tiddler_name' class='tc-edit-texteditor'/>
+
+</$reveal>
+
+Open an interface to add something to that day, like creating an event.

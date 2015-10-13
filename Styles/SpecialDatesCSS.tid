@@ -1,0 +1,18 @@
+title: $:/plugins/inmysocks/Calendar/SpecialDatesCSS
+tags: $:/tags/Stylesheet
+
+\define thisMakeCSS()
+.$(ThisCSSClassName)$ {
+	<$list filter='[<ThisCSSTiddler>get<PropertyName>]' variable=PropertyValue>
+		<<PropertyName>>:<<PropertyValue>>;
+	</$list>
+}
+\end
+
+<$list filter='[all[]][plugintiddlers[]]+[prefix[$:/data/plugins/inmysocks/Calendar/Special Date Types/]]' variable=ThisCSSTiddler>
+	<$list filter='[<ThisCSSTiddler>get[css_class]]' variable=ThisCSSClassName>
+		<$list filter='[<ThisCSSTiddler>fields[]]-[[title]]-[[created]]-[[modified]]-[[css_class]]-[[tag_or_field]]-[[identifier_tag]]-[[identifier_field_name]]-[[identifier_field_contents]]' variable=PropertyName>
+			<<thisMakeCSS>>
+		</$list>
+	</$list>
+</$list>

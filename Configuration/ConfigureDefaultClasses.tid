@@ -1,0 +1,127 @@
+title: $:/plugins/inmysocks/Calendar/ConfigureDefaultClasses
+caption: Configure Default Classes
+
+\define thisEditOptions()
+Text size
+<br>
+<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/DefaultClasses/$(ThisSelectedClass)$' field='font-size'/>
+<br>
+
+Text color
+<br>
+<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/DefaultClasses/$(ThisSelectedClass)$' field='color'/>
+<br>
+
+Font
+<br>
+<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/DefaultClasses/$(ThisSelectedClass)$' field='font'/>
+<br>
+
+Background color
+<br>
+<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/DefaultClasses/$(ThisSelectedClass)$' field='background-color'/>
+<br>
+
+Border color
+<br>
+<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/DefaultClasses/$(ThisSelectedClass)$' field='border-color'/>
+<br>
+
+Border style
+<br>
+<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/DefaultClasses/$(ThisSelectedClass)$' field='border-style'/>
+<br>
+
+Border width
+<br>
+<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/DefaultClasses/$(ThisSelectedClass)$' field='border-width'/>
+<br>
+\end
+
+<!--
+Date location:
+<$select tiddler='$:/temp/plugins/inmysocks/Calendar/calendarconfiguration' field='date_location'>
+	<option>
+		Top Left
+	</option>
+	<option>
+		Top Right
+	</option>
+	<option>
+		Bottom Left
+	</option>
+	<option>
+		Bottom Right
+	</option>
+</$select>
+\end
+-->
+
+<!-- To add another property use this template: <$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/DefaultClasses/$(ThisSelectedClass)$' field='property-name'/> -->
+
+Select part to edit:
+
+<$select tiddler='$:/state/plugins/inmysocks/Calendar' field='selected_class'>
+<option value='empty_space_class'>
+	Empty Cells
+</option>
+<option value='calendar_normal_weekend_class'>
+	Weekend Days
+</option>
+<option value='calendar_normal_weekday_class'>
+	Weekday Days
+</option>
+<option value='calendar_heading_class'>
+	Full Header
+</option>
+<option value='calendar_monday_heading_class'>
+	Monday Header
+</option>
+<option value='calendar_tuesday_heading_class'>
+	Tuesday Header
+</option>
+<option value='calendar_wednesday_heading_class'>
+	Wednesday Header
+</option>
+<option value='calendar_thursday_heading_class'>
+	Thursday Header
+</option>
+<option value='calendar_friday_heading_class'>
+	Friday Header
+</option>
+<option value='calendar_saturday_heading_class'>
+	Saturday Header
+</option>
+<option value='calendar_sunday_heading_class'>
+	Sunday Header
+</option>
+<option value='calendar_monday_day_class'>
+	Monday Cells
+</option>
+<option value='calendar_tuesday_day_class'>
+	Tuesday Cells
+</option>
+<option value='calendar_wednesday_day_class'>
+	Wednesday Cells
+</option>
+<option value='calendar_thursday_day_class'>
+	Thursday Cells
+</option>
+<option value='calendar_friday_day_class'>
+	Friday Cells
+</option>
+<option value='calendar_saturday_day_class'>
+	Saturday Cells
+</option>
+<option value='calendar_sunday_day_class'>
+	Sunday Cells
+</option>
+</$select>
+
+These settings affect calendars when you don't use a configuration tiddler. Changes here will affect ALL calendars that don't have specific configuration tiddlers.
+
+If you want to make one calendar formatted differently than other calendars than you have to use the 'Create Custom Calendar' tool.
+
+<$set name=ThisSelectedClass value={{$:/state/plugins/inmysocks/Calendar!!selected_class}}>
+<<thisEditOptions>>
+</$set>

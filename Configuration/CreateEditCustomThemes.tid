@@ -1,0 +1,310 @@
+title: $:/plugins/inmysocks/Calendars/CreateEditCustomCalendarTheme
+caption: Create and Edit Calendar Themes
+tags: $:/tags/plugins/inmysocks/Calendar/Settings
+
+\define thisMakeDefaultSelect()
+Select part to edit:
+
+<$select tiddler='$:/state/plugins/inmysocks/Calendar' field='selected_class'>
+<option value='empty_space_class'>
+	Empty Cells
+</option>
+<option value='calendar_normal_weekend_class'>
+	Weekend Days
+</option>
+<option value='calendar_normal_weekday_class'>
+	Weekday Days
+</option>
+<option value='calendar_heading_class'>
+	Full Header
+</option>
+<option value='calendar_monday_heading_class'>
+	Monday Header
+</option>
+<option value='calendar_tuesday_heading_class'>
+	Tuesday Header
+</option>
+<option value='calendar_wednesday_heading_class'>
+	Wednesday Header
+</option>
+<option value='calendar_thursday_heading_class'>
+	Thursday Header
+</option>
+<option value='calendar_friday_heading_class'>
+	Friday Header
+</option>
+<option value='calendar_saturday_heading_class'>
+	Saturday Header
+</option>
+<option value='calendar_sunday_heading_class'>
+	Sunday Header
+</option>
+<option value='calendar_monday_day_class'>
+	Monday Cells
+</option>
+<option value='calendar_tuesday_day_class'>
+	Tuesday Cells
+</option>
+<option value='calendar_wednesday_day_class'>
+	Wednesday Cells
+</option>
+<option value='calendar_thursday_day_class'>
+	Thursday Cells
+</option>
+<option value='calendar_friday_day_class'>
+	Friday Cells
+</option>
+<option value='calendar_saturday_day_class'>
+	Saturday Cells
+</option>
+<option value='calendar_sunday_day_class'>
+	Sunday Cells
+</option>
+</$select>
+\end
+
+\define thisEditDefaultOptions()
+Text size
+<br>
+<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/DefaultClasses/$(ThisSelectedClass)$' field='font-size'/>
+<br>
+
+Text color
+<br>
+<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/DefaultClasses/$(ThisSelectedClass)$' field='color'/>
+<br>
+
+Font
+<br>
+<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/DefaultClasses/$(ThisSelectedClass)$' field='font'/>
+<br>
+
+Background color
+<br>
+<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/DefaultClasses/$(ThisSelectedClass)$' field='background-color'/>
+<br>
+
+Border color
+<br>
+<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/DefaultClasses/$(ThisSelectedClass)$' field='border-color'/>
+<br>
+
+Border style
+<br>
+<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/DefaultClasses/$(ThisSelectedClass)$' field='border-style'/>
+<br>
+
+Border width
+<br>
+<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/DefaultClasses/$(ThisSelectedClass)$' field='border-width'/>
+<br>
+\end
+
+\define thisEditOptions()
+<$reveal type='nomatch' state='$:/state/plugins/inmysocks/Calendar/Create Custom Calendar!!selected_class' text=''>
+Text size
+<br>
+<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/Custom Theme/$(CustomThemeName)$/$(CSSClassName)$' field='font-size'/>
+<br>
+
+Text color
+<br>
+<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/Custom Theme/$(CustomThemeName)$/$(CSSClassName)$' field='color'/>
+<br>
+
+Font family
+<br>
+<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/Custom Theme/$(CustomThemeName)$/$(CSSClassName)$' field='font-family'/>
+<br>
+
+Background color
+<br>
+<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/Custom Theme/$(CustomThemeName)$/$(CSSClassName)$' field='background-color'/>
+<br>
+
+Border color
+<br>
+<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/Custom Theme/$(CustomThemeName)$/$(CSSClassName)$' field='border-color'/>
+<br>
+
+Border style
+<br>
+<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/Custom Theme/$(CustomThemeName)$/$(CSSClassName)$' field='border-style'/>
+<br>
+
+Border width
+<br>
+<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/Custom Theme/$(CustomThemeName)$/$(CSSClassName)$' field='border-width'/>
+<br>
+</$reveal>
+\end
+
+\define thisMakeSelect()
+Select part to edit:
+
+<$select tiddler='$:/state/plugins/inmysocks/Calendar/Create Custom Calendar' field='selected_class'>
+<option value=''>--</option>
+<option value='calendar_table_class_$(CustomThemeName)$'>
+	Full Calendar
+</option>
+<option value='empty_space_class_$(CustomThemeName)$'>
+	Empty Cells
+</option>
+<option value='calendar_normal_weekend_class_$(CustomThemeName)$'>
+	Weekend Days
+</option>
+<option value='calendar_normal_weekday_class_$(CustomThemeName)$'>
+	Weekday Days
+</option>
+<option value='calendar_heading_class_$(CustomThemeName)$'>
+	Full Header
+</option>
+<option value='calendar_monday_heading_class_$(CustomThemeName)$'>
+	Monday Header
+</option>
+<option value='calendar_tuesday_heading_class_$(CustomThemeName)$'>
+	Tuesday Header
+</option>
+<option value='calendar_wednesday_heading_class_$(CustomThemeName)$'>
+	Wednesday Header
+</option>
+<option value='calendar_thursday_heading_class_$(CustomThemeName)$'>
+	Thursday Header
+</option>
+<option value='calendar_friday_heading_class_$(CustomThemeName)$'>
+	Friday Header
+</option>
+<option value='calendar_saturday_heading_class_$(CustomThemeName)$'>
+	Saturday Header
+</option>
+<option value='calendar_sunday_heading_class_$(CustomThemeName)$'>
+	Sunday Header
+</option>
+<option value='calendar_monday_day_class_$(CustomThemeName)$'>
+	Monday Cells
+</option>
+<option value='calendar_tuesday_day_class_$(CustomThemeName)$'>
+	Tuesday Cells
+</option>
+<option value='calendar_wednesday_day_class_$(CustomThemeName)$'>
+	Wednesday Cells
+</option>
+<option value='calendar_thursday_day_class_$(CustomThemeName)$'>
+	Thursday Cells
+</option>
+<option value='calendar_friday_day_class_$(CustomThemeName)$'>
+	Friday Cells
+</option>
+<option value='calendar_saturday_day_class_$(CustomThemeName)$'>
+	Saturday Cells
+</option>
+<option value='calendar_sunday_day_class_$(CustomThemeName)$'>
+	Sunday Cells
+</option>
+</$select>
+\end
+
+\define thisCreateButton()
+<$reveal type='nomatch' state='$:/temp/plugins/inmysocks/Calendar/Create Custom Calendar!!custom_name' text=''>
+	<$button>
+		Create
+		<$action-setfield $tiddler="$:/data/plugins/inmysocks/Calendar/Custom Theme/$(CustomThemeName)$" $field='calendar_table_class' $value='calendar_table_class_$(CustomThemeName)$'/>
+		<$action-setfield $tiddler="$:/data/plugins/inmysocks/Calendar/Custom Theme/$(CustomThemeName)$" $field='empty_space_class' $value='empty_space_class_$(CustomThemeName)$'/>
+		<$action-setfield $tiddler="$:/data/plugins/inmysocks/Calendar/Custom Theme/$(CustomThemeName)$" $field='calendar_normal_weekend_class' $value='calendar_normal_weekend_class_$(CustomThemeName)$'/>
+		<$action-setfield $tiddler="$:/data/plugins/inmysocks/Calendar/Custom Theme/$(CustomThemeName)$" $field='calendar_normal_weekday_class' $value='calendar_normal_weekday_class_$(CustomThemeName)$'/>
+		<$action-setfield $tiddler="$:/data/plugins/inmysocks/Calendar/Custom Theme/$(CustomThemeName)$" $field='calendar_heading_class' $value='calendar_heading_class_$(CustomThemeName)$'/>
+		<$action-setfield $tiddler="$:/data/plugins/inmysocks/Calendar/Custom Theme/$(CustomThemeName)$" $field='calendar_monday_heading_class' $value='calendar_monday_heading_class_$(CustomThemeName)$'/>
+		<$action-setfield $tiddler="$:/data/plugins/inmysocks/Calendar/Custom Theme/$(CustomThemeName)$" $field='calendar_tuesday_heading_class' $value='calendar_tuesday_heading_class_$(CustomThemeName)$'/>
+		<$action-setfield $tiddler="$:/data/plugins/inmysocks/Calendar/Custom Theme/$(CustomThemeName)$" $field='calendar_wednesday_heading_class' $value='calendar_wednesday_heading_class_$(CustomThemeName)$'/>
+		<$action-setfield $tiddler="$:/data/plugins/inmysocks/Calendar/Custom Theme/$(CustomThemeName)$" $field='calendar_thursday_heading_class' $value='calendar_thursday_heading_class_$(CustomThemeName)$'/>
+		<$action-setfield $tiddler="$:/data/plugins/inmysocks/Calendar/Custom Theme/$(CustomThemeName)$" $field='calendar_friday_heading_class' $value='calendar_friday_heading_class_$(CustomThemeName)$'/>
+		<$action-setfield $tiddler="$:/data/plugins/inmysocks/Calendar/Custom Theme/$(CustomThemeName)$" $field='calendar_saturday_heading_class' $value='calendar_saturday_heading_class_$(CustomThemeName)$'/>
+		<$action-setfield $tiddler="$:/data/plugins/inmysocks/Calendar/Custom Theme/$(CustomThemeName)$" $field='calendar_sunday_heading_class' $value='calendar_sunday_heading_class_$(CustomThemeName)$'/>
+		<$action-setfield $tiddler="$:/data/plugins/inmysocks/Calendar/Custom Theme/$(CustomThemeName)$" $field='calendar_monday_day_class' $value='calendar_monday_day_class_$(CustomThemeName)$'/>
+		<$action-setfield $tiddler="$:/data/plugins/inmysocks/Calendar/Custom Theme/$(CustomThemeName)$" $field='calendar_tuesday_day_class' $value='calendar_tuesday_day_class_$(CustomThemeName)$'/>
+		<$action-setfield $tiddler="$:/data/plugins/inmysocks/Calendar/Custom Theme/$(CustomThemeName)$" $field='calendar_wednesday_day_class' $value='calendar_wednesday_day_class_$(CustomThemeName)$'/>
+		<$action-setfield $tiddler="$:/data/plugins/inmysocks/Calendar/Custom Theme/$(CustomThemeName)$" $field='calendar_thursday_day_class' $value='calendar_thursday_day_class_$(CustomThemeName)$'/>
+		<$action-setfield $tiddler="$:/data/plugins/inmysocks/Calendar/Custom Theme/$(CustomThemeName)$" $field='calendar_friday_day_class' $value='calendar_friday_day_class_$(CustomThemeName)$'/>
+		<$action-setfield $tiddler="$:/data/plugins/inmysocks/Calendar/Custom Theme/$(CustomThemeName)$" $field='calendar_saturday_day_class' $value='calendar_saturday_day_class_$(CustomThemeName)$'/>
+		<$action-setfield $tiddler="$:/data/plugins/inmysocks/Calendar/Custom Theme/$(CustomThemeName)$" $field='calendar_sunday_day_class' $value='calendar_sunday_day_class_$(CustomThemeName)$'/>
+		<$action-setfield $tiddler="$:/data/plugins/inmysocks/Calendar/List of Themes" $index="$(CustomThemeName)$" $value=true/>
+		<$action-setfield $tiddler="$:/temp/plugins/inmysocks/Calendar/Create Custom Calendar" $field=custom_name $value=''/>
+	</$button>
+</$reveal>
+<$reveal type='match' state='$:/temp/plugins/inmysocks/Calendar/Create Custom Calendar!!custom_name' text=''>
+	<$button>
+		Create
+	</$button>
+</$reveal>
+\end
+
+\define thisInnerThemeSelect()
+<option value='$:/data/plugins/inmysocks/Calendar/Custom Theme/$(SelectedTheme)$'>
+	$(SelectedTheme)$
+</option>
+\end
+
+\define thisMakeCalendar()
+<$vars dummy2={{$(selectedTheme)$!!modified}}>
+<$calendar-month month={{$:/temp/plugins/inmysocks/Calendar/Edit Calendar Preview!!month}} year={{$:/temp/plugins/inmysocks/Calendar/Edit Calendar Preview!!year}} configuration=Example/>
+</$vars>
+\end
+
+This name will be what you use to tell the calendar widget which theme you want to use. It should be a valid field name, so lowercase and only letters, numbers, `_` and `-`. Enter the name and click on `Create`, then you will be able to select the theme from the list and modify it however you wish.
+
+Create new theme: <$edit-text tiddler='$:/temp/plugins/inmysocks/Calendar/Create Custom Calendar' field='custom_name' placeholder='New Theme Name'/> <$vars CustomThemeName={{$:/temp/plugins/inmysocks/Calendar/Create Custom Calendar!!custom_name}}><<thisCreateButton>></$vars>
+
+or
+
+Select theme to edit:
+<$select tiddler='$:/data/plugins/inmysocks/Calendar/Custom Configuration/Example' field='theme_tiddler'>
+	<option value=''>--</option>
+	<option value=''>Default Theme</option>
+	<$list filter='[[$:/data/plugins/inmysocks/Calendar/List of Themes]indexes[]]' variable=SelectedTheme>
+		<<thisInnerThemeSelect>>
+	</$list>
+</$select>
+
+<$reveal type='match' state='$:/state/plugins/inmysocks/Calendar/CreateOrEditCustomCalendars!!selected_theme' text='Default Theme'>
+If you edit the default theme than the changes will affect any calendar you make without setting a configuration.
+</$reveal>
+
+<$set name=CustomThemeName filter='[{$:/data/plugins/inmysocks/Calendar/Custom Configuration/Example!!theme_tiddler}removeprefix[$:/data/plugins/inmysocks/Calendar/Custom Theme/]]'>
+<$vars CSSClassName={{$:/state/plugins/inmysocks/Calendar/Create Custom Calendar!!selected_class}}>
+
+<<CustomThemeName>>
+
+<<ThisSelectedClass>>
+
+<<CSSClassName>>
+
+<$reveal type='nomatch' state='$:/state/plugins/inmysocks/Calendar/CreateOrEditCustomCalendars!!selected_theme' text='Default Theme'>
+
+<<thisMakeSelect>>
+
+<<thisEditOptions>>
+
+</$reveal>
+
+<$reveal type='match' state='$:/state/plugins/inmysocks/Calendar/CreateOrEditCustomCalendars!!selected_theme' text='Default Theme'>
+
+<<thisMakeDefaultSelect>>
+
+<<thisEditDefaultOptions>>
+
+</$reveal>
+
+</$vars>
+</$set>
+
+<$select tiddler='$:/temp/plugins/inmysocks/Calendar/Edit Calendar Preview' field='month'><$list filter='1 2 3 4 5 6 7 8 9 10 11 12'><option><<currentTiddler>></option></$list>
+</$select>
+
+<$select tiddler='$:/temp/plugins/inmysocks/Calendar/Edit Calendar Preview' field='year'><$list filter='1900 1902 1903 1904 1955 1996 2007 2008 2109 2110 2211 2212'><option><<currentTiddler>></option></$list>
+</$select>
+
+<$vars dummy={{$:/temp/dummy}} selectedTheme={{$:/data/plugins/inmysocks/Calendar/Custom Configuration/Example!!theme_tiddler}}>
+
+<<thisMakeCalendar>>
+
+</$vars>

@@ -1,0 +1,14 @@
+title: $:/plugins/inmysocks/Calendar/Calendar Configuration
+caption: Calendar Configuration
+
+\define thisHelpButton(label)
+^^(<$button popup="""$:/temp/popup/$(currentTiddler)$/$label$""" class='tc-btn-invisible'>?</$button>)<$reveal type='popup' state="""$:/temp/popup/$(currentTiddler)$/$label$"""><div class='tc-drop-down tc-popup-keep' style='max-width:75vw;text-overflow:ellipsis'><span style='margin-left:10px;margin-right:10px;'><$view field="""$label$""" mode=block/></span></div></$reveal>^^
+\end
+
+This is a tool to create a configuration for a calendar created using the calendar widget.
+
+<<tabs "[all[system+shadow]][plugintiddlers[]]+[tag[$:/tags/plugins/inmysocks/Calendar/Settings]]">>
+
+!!To do
+
+Add options for automatically generated macros. See the tab about click behavior if you want to see some planned stuff.

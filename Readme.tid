@@ -20,12 +20,34 @@ Content of the `<$calendar-month>` widget is ignored.
 |!Attribute |!Description |
 |year |The year that the month displayed is from. It must be in 4 digit YYYY format and has no default value. |
 |month |The month to display. See list below for valid month values. month has no default value. |
-|day_macro |(optional) The macro that defines the content of each calendar day. It is passed the parameter `day` with the value of the current day of the month. Defaluts to `CalendarListDailyThings` defined in [[Calendar Default Macros|$:/plugins/inmysocks/Calendar/Calendar Default Macros]] |
+|day_macro |(optional) The macro that defines the content of each calendar day. It is passed the parameters `day`, `month`, `year` and `dayOfTheWeek` with the correct values for the current day of the month. Defaluts to `CalendarListDailyThings` defined in [[Calendar Default Macros|$:/plugins/inmysocks/Calendar/Calendar Default Macros]] |
+|weekstart |Set equal to Sunday or Monday to specify the first day of the week, defaults to Monday. |
 |class |(optional) A css class to use. Defaults to the class `calendar-table` defined in [[Calendar Table Style|$:/plugins/inmysocks/Calendar/Calendar Table Style]] |
 
 !The default ~CalendarListDailyThings macro
 
 This macro lists any tiddlers that have fields called `day`, `month` and `year` in the matching calendar day. If you click on a cell than a tiddler with a title in the form of (day)-(month)-(year) is opened.
+
+!Making custom day macros
+
+The macro is put inside each day of the month and passed the appropriate values for day, month, year and dayOfTheWeek. 
+
+*`day` is the day of the month and will be in the range [1,31].
+*`month` is given as a number in the range [1,12] where 1 is January and 12 is December.
+*`year` is the 4 digit year value and is the same as the value passed to the widget
+*`dayOfTheWeek` is a number representing the day of the week, if you have the week starting on Monday than Monday is 0 and Sunday is 6, if you have the week start on Sunday than Sunday is 0 and Saturday is 6
+
+One of the simplest macros would be:
+
+```
+\define SimpleCalendarDayMacro(day month year dayOfWeek)
+$day$
+\end
+```
+
+which just displays the current date in each day on the calendar.
+
+When you make a macro for the calendar remember that you either need to put it in a tiddler tagged with `$:/tags/Macros` or you need to put the macro in the same tiddler where you use the calendar widget.
 
 !Month values
 
@@ -107,11 +129,11 @@ Select year: <$select field='year'><$list filter='1990 1991 1992 1993 1994 1995 
 
 Select month: <$select field='month'><$list filter='1 2 3 4 5 6 7 8 9 10 11 12'><option><<currentTiddler>></option></$list></$select>
 
-<$calendar-month year={{!!year}} month={{!!month}}/>
+<$calendar-month year={{!!year}} month={{!!month}} day_macro=CalendarListDailyThings/>
 ```
 
 Select year: <$select field='year'><$list filter='1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000'><option><<currentTiddler>></option></$list></$select>
 
 Select month: <$select field='month'><$list filter='1 2 3 4 5 6 7 8 9 10 11 12'><option><<currentTiddler>></option></$list></$select>
 
-<$calendar-month year={{!!year}} month={{!!month}}/>
+<$calendar-month year={{!!year}} month={{!!month}} day_macro=CalendarListDailyThings/>

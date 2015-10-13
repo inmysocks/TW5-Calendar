@@ -105,11 +105,11 @@ Select year: <$select field='year'><$list filter='1990 1991 1992 1993 1994 1995 
 
 Select month: <$select field='month'><$list filter='1 2 3 4 5 6 7 8 9 10 11 12'><option><<currentTiddler>></option></$list></$select>
 
-<$calendar-month year={{!!year}} month={{!!month}}/>
+<$calendar-month year={{!!year}} month={{!!month}} day_macro=CalendarColorWeekends/>
 ```
 
 Select year: <$select field='year'><$list filter='1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000'><option><<currentTiddler>></option></$list></$select>
 
 Select month: <$select field='month'><$list filter='1 2 3 4 5 6 7 8 9 10 11 12'><option><<currentTiddler>></option></$list></$select>
 
-<$calendar-month year={{!!year}} month={{!!month}}/>
+<$calendar-month year={{!!year}} month={{!!month}} day_macro=CalendarColorWeekends/>

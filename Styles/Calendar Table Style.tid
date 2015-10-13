@@ -1,14 +1,14 @@
-created: 20150212024632244
-modified: 20150212042506838
 tags: $:/tags/Stylesheet
 title: $:/plugins/inmysocks/Calendar/Calendar Table Style
 type: text/css
 
 .calendar-table {
-	border: 0px;
     overflow: hidden;
-    vertical-align: top;
     width: 100%;
+}
+
+.calendar-table button {
+	line-height: 1.5;
 }
 
 .calendar-table table {
@@ -16,10 +16,10 @@ type: text/css
 }
 
 .calendar-table td, th {
+	padding: 0px 0px 0px 0px;
     width: 14%;
-    vertical-align: top;
 }
 
 .calendar-table td {
-        height: 100px;
+    height: 100px;
 }
