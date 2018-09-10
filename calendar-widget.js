@@ -1,5 +1,5 @@
 /*\
-title: $:/plugins/inmysocks/Calendar/calendar-widget.js
+title: $:/plugins/OokTech/Calendar/calendar-widget.js
 type: application/javascript
 module-type: widget
 
@@ -51,7 +51,7 @@ Calendar.prototype.execute = function() {
 	var thisCalendarCSS = this.getAttribute("class", "calendar-table");
 	var thisWeekStartDay = this.getAttribute("weekstart", "Monday");
 	var thisConfiguration = this.getAttribute("configuration");
-	var thisConfigurationTiddlerTitle = "$:/data/plugins/inmysocks/Calendar/Custom Configuration/";
+	var thisConfigurationTiddlerTitle = "$:/data/plugins/OokTech/Calendar/Custom Configuration/";
 
 	thisConfigurationTiddlerTitle = thisConfigurationTiddlerTitle + thisConfiguration;
 
@@ -220,7 +220,7 @@ Calendar.prototype.execute = function() {
 					}
 					//Get information for each date type.
 					for (var i = 0; i < dateTypesArray.length; i++) {
-						var dateTypeTiddler = this.wiki.getTiddler("$:/data/plugins/inmysocks/Calendar/Special Date Types/".concat(dateTypesArray[i].toString()));
+						var dateTypeTiddler = this.wiki.getTiddler("$:/data/plugins/OokTech/Calendar/Special Date Types/".concat(dateTypesArray[i].toString()));
 						if (dateTypeTiddler) {
 							//Get the css class for the date type.
 							dateTypes[dateTypesArray[i]]["cssClass"] = dateTypeTiddler.getFieldString("css_class", "''");

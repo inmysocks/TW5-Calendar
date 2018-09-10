@@ -1,16 +1,16 @@
-title: $:/plugins/inmysocks/Calendar/DefaultClasses
+title: $:/plugins/OokTech/Calendar/DefaultClasses
 tags: $:/tags/Stylesheet
 
 \define thisMakeCSS()
 .$(ThisCSSClass)$ {
-<$list filter='[[$:/data/plugins/inmysocks/Calendar/DefaultClasses/$(ThisCSSClass)$]fields[]]-[[title]]-[[created]]-[[modified]]' variable=PropertyName>
-	<$list filter='[[$:/data/plugins/inmysocks/Calendar/DefaultClasses/$(ThisCSSClass)$]get<PropertyName>]' variable=PropertyValue>
+<$list filter='[[$:/data/plugins/OokTech/Calendar/DefaultClasses/$(ThisCSSClass)$]fields[]]-[[title]]-[[created]]-[[modified]]' variable=PropertyName>
+	<$list filter='[[$:/data/plugins/OokTech/Calendar/DefaultClasses/$(ThisCSSClass)$]get<PropertyName>]' variable=PropertyValue>
 		<<PropertyName>>:<<PropertyValue>>;
 	</$list>
 </$list>
 }
 \end
 
-<$list filter='[all[]][plugintiddlers[]]+[removeprefix[$:/data/plugins/inmysocks/Calendar/DefaultClasses/]]' variable=ThisCSSClass>
+<$list filter='[all[]][plugintiddlers[]]+[removeprefix[$:/data/plugins/OokTech/Calendar/DefaultClasses/]]' variable=ThisCSSClass>
 <<thisMakeCSS>>
 </$list>

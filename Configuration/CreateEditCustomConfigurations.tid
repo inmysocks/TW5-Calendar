@@ -1,18 +1,19 @@
-title: $:/plugins/inmysocks/Calendars/CreateEditCustomCalendarConfiguration
+title: $:/plugins/OokTech/Calendars/CreateEditCustomCalendarConfiguration
 caption: Create and Edit Calendar Configurations
-tags: $:/tags/plugins/inmysocks/Calendar/Settings
+tags: $:/tags/plugins/OokTech/Calendar/Settings
 
 \define thisCreateConfigurationButton()
 <$button>
 	Create
-	<$action-setfield $tiddler='$:/data/plugins/inmysocks/Calendar/Custom Configuration/$(ConfigurationName)$' special_date_types_tiddler='' theme_tiddler=''/>
-	<$action-setfield $tiddler='$:/state/plugins/inmysocks/Calendar/CreateEditCustomCalendarConfiguration' $field='selected_configuration' $value='$:/data/plugins/inmysocks/Calendar/Custom Configuration/$(ConfigurationName)$'/>
-	<$action-setfield $tiddler='$:/temp/plugins/inmysocks/Calendar/CreateEditeCustomCalendarConfigurations' new_configuration_name=''/>
+	<$action-setfield $tiddler='$:/data/plugins/OokTech/Calendar/Custom Configuration/$(ConfigurationName)$' special_date_types_tiddler='$:/data/plugins/OokTech/Calendar/Custom Configuration Dates/$(ConfigurationName)$' theme_tiddler=''/>
+	<$action-setfield $tiddler='$:/data/plugins/OokTech/Calendar/Custom Configuration Dates/$(ConfigurationName)$' text=''/>
+	<$action-setfield $tiddler='$:/state/plugins/OokTech/Calendar/CreateEditCustomCalendarConfiguration' $field='selected_configuration' $value='$:/data/plugins/OokTech/Calendar/Custom Configuration/$(ConfigurationName)$'/>
+	<$action-setfield $tiddler='$:/temp/plugins/OokTech/Calendar/CreateEditeCustomCalendarConfigurations' new_configuration_name=''/>
 </$button>
 \end
 
 \define thisSelectListItem()
-<option value='$:/data/plugins/inmysocks/Calendar/Custom Configuration/$(ConfigurationName)$'>
+<option value='$:/data/plugins/OokTech/Calendar/Custom Configuration/$(ConfigurationName)$'>
 	$(ConfigurationName)$
 </option>
 \end
@@ -20,14 +21,14 @@ tags: $:/tags/plugins/inmysocks/Calendar/Settings
 \define thisOuterThemeSelect()
 <$select tiddler='$(ConfigurationName)$' field='theme_tiddler'>
 	<option value=''>Default Theme</option>
-	<$list filter='[[$:/data/plugins/inmysocks/Calendar/List of Themes]indexes[]]' variable=SelectedTheme>
+	<$list filter='[[$:/data/plugins/OokTech/Calendar/List of Themes]indexes[]]' variable=SelectedTheme>
 		<<thisInnerThemeSelect>>
 	</$list>
 </$select>
 \end
 
 \define thisInnerThemeSelect()
-<option value='$:/data/plugins/inmysocks/Calendar/Custom Theme/$(SelectedTheme)$'>
+<option value='$:/data/plugins/OokTech/Calendar/Custom Theme/$(SelectedTheme)$'>
 	$(SelectedTheme)$
 </option>
 \end
@@ -36,41 +37,53 @@ tags: $:/tags/plugins/inmysocks/Calendar/Settings
 <$checkbox tiddler={{$(SelectedConfiguration)$!!special_date_types_tiddler}} tag=<<CurrentDateType>>><<CurrentDateType>></$checkbox>
 \end
 
+\define thisCustomCheckboxEntry()
+<$checkbox tiddler={{$(SelectedConfiguration)$!!special_date_types_tiddler}} tag=<<CurrentDateType>>><<CurrentDateType>></$checkbox>
+\end
+
 This is used to select the themes and date types that are used in a calendar configuration. You specifiy which configuration to use when you put the widget in wikitext using the `configuration` attribute. So something like this: `<$calendar-month year=1900 month=2 configuration=Example/>`
 
-<$vars ConfigurationName={{$:/temp/plugins/inmysocks/Calendar/CreateEditeCustomCalendarConfigurations!!new_configuration_name}}>
-Create configuration: <$edit-text tiddler='$:/temp/plugins/inmysocks/Calendar/CreateEditeCustomCalendarConfigurations' field='new_configuration_name' placeholder='New Configuration Name'/> <<thisCreateConfigurationButton>> 
+Create configuration: <$edit-text tiddler='$:/temp/plugins/OokTech/Calendar/CreateEditeCustomCalendarConfigurations' field='new_configuration_name' placeholder='New Configuration Name'/>
+<$vars ConfigurationName={{$:/temp/plugins/OokTech/Calendar/CreateEditeCustomCalendarConfigurations!!new_configuration_name}}>
+<<thisCreateConfigurationButton>> 
 </$vars>
 
 or
 
 Select configuration to edit:
 
-<$select tiddler='$:/state/plugins/inmysocks/Calendar/CreateEditCustomCalendarConfiguration' field='selected_configuration'>
+<$select tiddler='$:/state/plugins/OokTech/Calendar/CreateEditCustomCalendarConfiguration' field='selected_configuration'>
 	<option value=''>
 		--
 	</option>
-	<$list filter='[all[]][plugintiddlers[]]+[removeprefix[$:/data/plugins/inmysocks/Calendar/Custom Configuration/]]' variable=ConfigurationName>
+	<$list filter='[all[]][plugintiddlers[]]+[removeprefix[$:/data/plugins/OokTech/Calendar/Custom Configuration/]]' variable=ConfigurationName>
 		<<thisSelectListItem>>
 	</$list>
 </$select>
 
-<$reveal type='match' state='$:/state/plugins/inmysocks/Calendar/CreateEditCustomCalendarConfiguration!!selected_configuration' text=''>
+<$reveal type='match' state='$:/state/plugins/OokTech/Calendar/CreateEditCustomCalendarConfiguration!!selected_configuration' text=''>
 Select or create a new configuration above first.
 </$reveal>
 
-<$reveal type='nomatch' state='$:/state/plugins/inmysocks/Calendar/CreateEditCustomCalendarConfiguration!!selected_configuration' text=''>
+<$reveal type='nomatch' state='$:/state/plugins/OokTech/Calendar/CreateEditCustomCalendarConfiguration!!selected_configuration' text=''>
 Select theme:
 
-<$set name=ConfigurationName value={{$:/state/plugins/inmysocks/Calendar/CreateEditCustomCalendarConfiguration!!selected_configuration}}>
+<$set name=ConfigurationName value={{$:/state/plugins/OokTech/Calendar/CreateEditCustomCalendarConfiguration!!selected_configuration}}>
 <<thisOuterThemeSelect>>
 </$set>
-
+<br>
 Select special date formatting types:
 
-<$vars SelectedConfiguration={{$:/state/plugins/inmysocks/Calendar/CreateEditCustomCalendarConfiguration!!selected_configuration}}>
-	<$list filter='[[$:/data/plugins/inmysocks/Calendar/Special Date Types]indexes[]]' variable=CurrentDateType>
-		<<thisCheckboxEntry>>
+<$vars SelectedConfiguration={{$:/state/plugins/OokTech/Calendar/CreateEditCustomCalendarConfiguration!!selected_configuration}}>
+	<$list filter='[[$:/data/plugins/OokTech/Calendar/Special Date Types]indexes[]]' variable=CurrentDateType emptyMessage="Create custom date types in the 'Define or Edit Date Types' tab.">
+
+		<$reveal type='match' state='$:/state/plugins/OokTech/Calendar/CreateEditCustomCalendarConfiguration!!selected_configuration' text=''>
+			<<thisCheckboxEntry>>
+		</$reveal>
+		<$reveal type='nomatch' state='$:/state/plugins/OokTech/Calendar/CreateEditCustomCalendarConfiguration!!selected_configuration' text=''>
+			<<thisCustomCheckboxEntry>>
+		</$reveal>
+
 	</$list>
 </$vars>
 </$reveal>

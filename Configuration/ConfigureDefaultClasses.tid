@@ -1,46 +1,46 @@
-title: $:/plugins/inmysocks/Calendar/ConfigureDefaultClasses
+title: $:/plugins/OokTech/Calendar/ConfigureDefaultClasses
 caption: Configure Default Classes
 
 \define thisEditOptions()
 Text size
 <br>
-<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/DefaultClasses/$(ThisSelectedClass)$' field='font-size'/>
+<$edit-text tiddler='$:/data/plugins/OokTech/Calendar/DefaultClasses/$(ThisSelectedClass)$' field='font-size'/>
 <br>
 
 Text color
 <br>
-<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/DefaultClasses/$(ThisSelectedClass)$' field='color'/>
+<$edit-text tiddler='$:/data/plugins/OokTech/Calendar/DefaultClasses/$(ThisSelectedClass)$' field='color'/>
 <br>
 
 Font
 <br>
-<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/DefaultClasses/$(ThisSelectedClass)$' field='font'/>
+<$edit-text tiddler='$:/data/plugins/OokTech/Calendar/DefaultClasses/$(ThisSelectedClass)$' field='font'/>
 <br>
 
 Background color
 <br>
-<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/DefaultClasses/$(ThisSelectedClass)$' field='background-color'/>
+<$edit-text tiddler='$:/data/plugins/OokTech/Calendar/DefaultClasses/$(ThisSelectedClass)$' field='background-color'/>
 <br>
 
 Border color
 <br>
-<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/DefaultClasses/$(ThisSelectedClass)$' field='border-color'/>
+<$edit-text tiddler='$:/data/plugins/OokTech/Calendar/DefaultClasses/$(ThisSelectedClass)$' field='border-color'/>
 <br>
 
 Border style
 <br>
-<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/DefaultClasses/$(ThisSelectedClass)$' field='border-style'/>
+<$edit-text tiddler='$:/data/plugins/OokTech/Calendar/DefaultClasses/$(ThisSelectedClass)$' field='border-style'/>
 <br>
 
 Border width
 <br>
-<$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/DefaultClasses/$(ThisSelectedClass)$' field='border-width'/>
+<$edit-text tiddler='$:/data/plugins/OokTech/Calendar/DefaultClasses/$(ThisSelectedClass)$' field='border-width'/>
 <br>
 \end
 
 <!--
 Date location:
-<$select tiddler='$:/temp/plugins/inmysocks/Calendar/calendarconfiguration' field='date_location'>
+<$select tiddler='$:/temp/plugins/OokTech/Calendar/calendarconfiguration' field='date_location'>
 	<option>
 		Top Left
 	</option>
@@ -57,11 +57,11 @@ Date location:
 \end
 -->
 
-<!-- To add another property use this template: <$edit-text tiddler='$:/data/plugins/inmysocks/Calendar/DefaultClasses/$(ThisSelectedClass)$' field='property-name'/> -->
+<!-- To add another property use this template: <$edit-text tiddler='$:/data/plugins/OokTech/Calendar/DefaultClasses/$(ThisSelectedClass)$' field='property-name'/> -->
 
 Select part to edit:
 
-<$select tiddler='$:/state/plugins/inmysocks/Calendar' field='selected_class'>
+<$select tiddler='$:/state/plugins/OokTech/Calendar' field='selected_class'>
 <option value='empty_space_class'>
 	Empty Cells
 </option>
@@ -122,6 +122,6 @@ These settings affect calendars when you don't use a configuration tiddler. Chan
 
 If you want to make one calendar formatted differently than other calendars than you have to use the 'Create Custom Calendar' tool.
 
-<$set name=ThisSelectedClass value={{$:/state/plugins/inmysocks/Calendar!!selected_class}}>
+<$set name=ThisSelectedClass value={{$:/state/plugins/OokTech/Calendar!!selected_class}}>
 <<thisEditOptions>>
 </$set>

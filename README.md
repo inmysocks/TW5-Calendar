@@ -18,8 +18,8 @@ Content of the `<$calendar-month>` widget is ignored.
 |!Attribute |!Description |
 |year |The year that the month displayed is from. It must be in 4 digit YYYY format and has no default value. |
 |month |The month to display. See list below for valid month values. month has no default value. |
-|day_macro |(optional) The macro that defines the content of each calendar day. It is passed the parameter `day` with the value of the current day of the month. Defaluts to `CalendarListDailyThings` defined in [[Calendar Default Macros|$:/plugins/inmysocks/Calendar/Calendar Default Macros]] |
-|class |(optional) A css class to use. Defaults to the class `calendar-table` defined in [[Calendar Table Style|$:/plugins/inmysocks/Calendar/Calendar Table Style]] |
+|day_macro |(optional) The macro that defines the content of each calendar day. It is passed the parameter `day` with the value of the current day of the month. Defaluts to `CalendarListDailyThings` defined in [[Calendar Default Macros|$:/plugins/OokTech/Calendar/Calendar Default Macros]] |
+|class |(optional) A css class to use. Defaults to the class `calendar-table` defined in [[Calendar Table Style|$:/plugins/OokTech/Calendar/Calendar Table Style]] |
 
 !The default ~CalendarListDailyThings macro
 

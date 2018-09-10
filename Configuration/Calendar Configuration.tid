@@ -1,4 +1,4 @@
-title: $:/plugins/inmysocks/Calendar/Calendar Configuration
+title: $:/plugins/OokTech/Calendar/Calendar Configuration
 caption: Calendar Configuration
 
 \define thisHelpButton(label)
@@ -7,7 +7,7 @@ caption: Calendar Configuration
 
 This is a tool to create a configuration for a calendar created using the calendar widget.
 
-<<tabs "[all[system+shadow]][plugintiddlers[]]+[tag[$:/tags/plugins/inmysocks/Calendar/Settings]]">>
+<<tabs "[all[system+shadow]][plugintiddlers[]]+[tag[$:/tags/plugins/OokTech/Calendar/Settings]]">>
 
 !!To do
 

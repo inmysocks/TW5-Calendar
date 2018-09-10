@@ -1,4 +1,4 @@
-title: $:/plugins/inmysocks/Calendar/CSS
+title: $:/plugins/OokTech/Calendar/CSS
 tags: $:/tags/Stylesheet
 
 \define thisMakeCSS()
@@ -11,7 +11,7 @@ tags: $:/tags/Stylesheet
 }
 \end
 
-<$list filter='[all[]][plugintiddlers[]]+[prefix[$:/data/plugins/inmysocks/Calendar/Custom Theme/]]' variable=ThisCustomThemeTiddler>
+<$list filter='[all[]][plugintiddlers[]]+[prefix[$:/data/plugins/OokTech/Calendar/Custom Theme/]]' variable=ThisCustomThemeTiddler>
 	<$list filter='[all[]][plugintiddlers[]]+[removeprefix<ThisCustomThemeTiddler>removeprefix[/]]' variable=ThisCSSClassName>
 		<$list filter='[all[]][plugintiddlers[]]+[suffix<ThisCSSClassName>]' variable=ThisCSSClassTiddler>
 			<<thisMakeCSS>>
