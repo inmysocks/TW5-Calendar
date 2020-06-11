@@ -3,17 +3,32 @@ tags: $:/tags/Stylesheet
 
 \define thisMakeCSS()
 .$(ThisCSSClassName)$ {
-	<$list filter='[[$(ThisCSSClassTiddler)$]fields[]]-[[title]]-[[created]]-[[modified]]' variable=PropertyName>
-		<$list filter='[[$(ThisCSSClassTiddler)$]get<PropertyName>]' variable=PropertyValue>
+	<$list
+		filter='[[$(ThisCSSClassTiddler)$]fields[]]-[[title]]-[[created]]-[[modified]]'
+		variable=PropertyName
+	>
+		<$list
+			filter='[[$(ThisCSSClassTiddler)$]get<PropertyName>]'
+			variable=PropertyValue
+		>
 			<<PropertyName>>:<<PropertyValue>>;
 		</$list>
 	</$list>
 }
 \end
 
-<$list filter='[all[]][plugintiddlers[]]+[prefix[$:/data/plugins/OokTech/Calendar/Custom Theme/]]' variable=ThisCustomThemeTiddler>
-	<$list filter='[all[]][plugintiddlers[]]+[removeprefix<ThisCustomThemeTiddler>removeprefix[/]]' variable=ThisCSSClassName>
-		<$list filter='[all[]][plugintiddlers[]]+[suffix<ThisCSSClassName>]' variable=ThisCSSClassTiddler>
+<$list
+	filter='[all[]][plugintiddlers[]]+[prefix[$:/data/plugins/OokTech/Calendar/Custom Theme/]]'
+	variable=ThisCustomThemeTiddler
+>
+	<$list
+		filter='[all[]][plugintiddlers[]]+[removeprefix<ThisCustomThemeTiddler>removeprefix[/]]'
+		variable=ThisCSSClassName
+	>
+		<$list
+			filter='[all[]][plugintiddlers[]]+[suffix<ThisCSSClassName>]'
+			variable=ThisCSSClassTiddler
+		>
 			<<thisMakeCSS>>
 		</$list>
 	</$list>

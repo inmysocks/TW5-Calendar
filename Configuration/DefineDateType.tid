@@ -3,53 +3,89 @@ tags: $:/tags/plugins/OokTech/Calendar/Settings
 caption: Define or Edit Date Types
 
 \define thisCreateButton()
-<$reveal type='nomatch' state='$:/temp/plugins/OokTech/Calendar/Create Custom Date!!custom_name' text=''>
+<$reveal
+	type='nomatch'
+	state='$:/temp/plugins/OokTech/Calendar/Create Custom Date!!custom_name'
+	text=''
+>
 	<$button>
 		Create
-		<$action-setfield $tiddler='$:/data/plugins/OokTech/Calendar/Special Date Types' $index={{$:/temp/plugins/OokTech/Calendar/Create Custom Date!!custom_name}} $value='true'/>
-		<$action-setfield $tiddler='$:/data/plugins/OokTech/Calendar/Special Date Types/$(DateType)$' css_class='special_date_types_$(DateType)$_css'/>
-		<$action-setfield $tiddler='$:/data/plugins/OokTech/Calendar/Special Date Types/$(DateType)$' tag_or_field='Tag'/>
+		<$action-setfield
+			$tiddler='$:/data/plugins/OokTech/Calendar/Special Date Types'
+			$index={{$:/temp/plugins/OokTech/Calendar/Create Custom Date!!custom_name}}
+			$value='true'
+		/>
+		<$action-setfield
+			$tiddler='$:/data/plugins/OokTech/Calendar/Special Date Types/$(DateType)$'
+			css_class='special_date_types_$(DateType)$_css'
+		/>
+		<$action-setfield
+			$tiddler='$:/data/plugins/OokTech/Calendar/Special Date Types/$(DateType)$'
+			tag_or_field='Tag'
+		/>
 		<$action-setfield $tiddler='$:/temp/plugins/OokTech/Calendar/Create Custom Date' custom_name=''/>
 	</$button>
 </$reveal>
 \end
 
 \define thisEditOptions()
-<$reveal type='nomatch' state='$:/state/plugins/OokTech/Calendar/DefineDateType!!selected_theme' text=''>
-Text size
-<br>
-<$edit-text tiddler='$:/data/plugins/OokTech/Calendar/Special Date Types/$(SelectedDateType)$' field='font-size'/>
-<br>
+<$reveal
+	type='nomatch'
+	state='$:/state/plugins/OokTech/Calendar/DefineDateType!!selected_theme'
+	text=''
+>
+	Text size
+	<br>
+	<$edit-text
+		tiddler='$:/data/plugins/OokTech/Calendar/Special Date Types/$(SelectedDateType)$'
+		field='font-size'
+	/>
+	<br>
 
-Text color
-<br>
-<$edit-text tiddler='$:/data/plugins/OokTech/Calendar/Special Date Types/$(SelectedDateType)$' field='color'/>
-<br>
+	Text color
+	<br>
+	<$edit-text
+		tiddler='$:/data/plugins/OokTech/Calendar/Special Date Types/$(SelectedDateType)$'
+		field='color'
+	/>
+	<br>
 
-Font family
-<br>
-<$edit-text tiddler='$:/data/plugins/OokTech/Calendar/Special Date Types/$(SelectedDateType)$' field='font-family'/>
-<br>
+	Font family
+	<br>
+	<$edit-text tiddler='$:/data/plugins/OokTech/Calendar/Special Date Types/$(SelectedDateType)$' field='font-family'/>
+	<br>
 
-Background color
-<br>
-<$edit-text tiddler='$:/data/plugins/OokTech/Calendar/Special Date Types/$(SelectedDateType)$' field='background-color'/>
-<br>
+	Background color
+	<br>
+	<$edit-text
+		tiddler='$:/data/plugins/OokTech/Calendar/Special Date Types/$(SelectedDateType)$'
+		field='background-color'
+	/>
+	<br>
 
-Border color
-<br>
-<$edit-text tiddler='$:/data/plugins/OokTech/Calendar/Special Date Types/$(SelectedDateType)$' field='border-color'/>
-<br>
+	Border color
+	<br>
+	<$edit-text
+		tiddler='$:/data/plugins/OokTech/Calendar/Special Date Types/$(SelectedDateType)$'
+		field='border-color'
+	/>
+	<br>
 
-Border style
-<br>
-<$edit-text tiddler='$:/data/plugins/OokTech/Calendar/Special Date Types/$(SelectedDateType)$' field='border-style'/>
-<br>
+	Border style
+	<br>
+	<$edit-text
+		tiddler='$:/data/plugins/OokTech/Calendar/Special Date Types/$(SelectedDateType)$'
+		field='border-style'
+	/>
+	<br>
 
-Border width
-<br>
-<$edit-text tiddler='$:/data/plugins/OokTech/Calendar/Special Date Types/$(SelectedDateType)$' field='border-width'/>
-<br>
+	Border width
+	<br>
+	<$edit-text
+		tiddler='$:/data/plugins/OokTech/Calendar/Special Date Types/$(SelectedDateType)$'
+		field='border-width'
+	/>
+	<br>
 </$reveal>
 \end
 
